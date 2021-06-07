@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>雨量觀測</title>
+	<!-- 建立整體樣式指導：基礎字型、字體、基底色、標題、段落樣式等等 -->
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<!-- 建立雨量觀測部份的樣式 -->
+	<link rel="stylesheet" type="text/css" href="css/raining.css" />
+</head>
+<body>
+	<!-- 美化雨量觀測顯示、資料處理或建立資料分頁功能 -->
+	<h3>雨量觀測</h3>
+	<div id="raining"></div>
+
+	<!--
+		完成各縣市氣象預報功能
+		請使用中央氣象局公開 API 的第一個資料集 (/v1/rest/datastore/F-C0032-001)
+		https://opendata.cwb.gov.tw/dist/opendata-swagger.html?urls.primaryName=openAPI#/
+	-->
+	<h3>各縣市最新氣象預報 ( 文字描述、低溫、高溫 )</h3>
+	<div id="weather"></div>
+	<script>
+		// 以下是我申請的 KEY 請使用無所謂，你也可以自己去中央氣象局網站申請一個
+		// https://opendata.cwb.gov.tw/index
+		const CWB_API_KEY="CWB-2EF6C203-2256-404D-AD80-5E9DE0982C6A";
+	</script>
+	<script src="js/raining.js"></script>
+</body>
+</html>
