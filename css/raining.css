@@ -1,7 +1,8 @@
-#raining{}
-#raining>.location{
-	border-bottom:1px solid #000000;
+/* #raining {
 }
-#raining>.location>.town{
-	font-weight:bold;
+#raining > .location {
+  border-bottom: 1px solid #000000;
 }
+#raining > .location > .town {
+  font-weight: bold;
+} */
