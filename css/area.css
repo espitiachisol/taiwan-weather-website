@@ -1,0 +1,151 @@
+.tony.taiwan_pic {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  padding-top: 3rem;
+}
+.tony #pin{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .5s;
+  font-size: 30px;
+  color: cadetblue;
+  animation: tt 1s infinite;
+}
+@keyframes tt{
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.tony #time_period{
+  padding: 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: none;
+}
+.tony #img_block {
+  position: relative;
+  margin-left: 20px;
+}
+.tony #img_block img {
+  width: 400px;
+}
+.tony .loc_area {
+  font-size: 12px;
+  position: absolute;
+  font-weight: 700;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+.tony .loc_area:hover::before{
+  content: attr(data-des);
+  font-size: 12px;
+  background-color: aliceblue;
+  word-break: keep-all;
+  width: 200px;
+  position: absolute;
+  z-index: 2;
+  padding: 5px;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+}
+.tony .loc_area i::before{
+  z-index: 4;
+}
+.基隆市 {
+  top: 30px;
+  left: 350px;
+}
+.新北市 {
+  top: 50px;
+  left: 300px;
+}
+.臺北市 {
+  top: 70px;
+  left: 330px;
+}
+.桃園市 {
+  top: 50px;
+  left: 250px;
+}
+.新竹縣 {
+  top: 80px;
+  left: 200px;
+}
+.新竹市 {
+  top: 100px;
+  left: 250px;
+}
+.苗栗縣 {
+  top: 130px;
+  left: 200px;
+}
+.臺中市 {
+  top: 180px;
+  left: 200px;
+}
+.彰化縣 {
+  top: 220px;
+  left: 150px;
+}
+.雲林縣 {
+  top: 260px;
+  left: 100px;
+}
+.嘉義縣 {
+  top: 310px;
+  left: 100px;
+}
+.嘉義市 {
+  top: 290px;
+  left: 150px;
+}
+.臺南市 {
+  top: 330px;
+  left: 150px;
+}
+.高雄市 {
+  top: 400px;
+  left: 150px;
+}
+.屏東縣 {
+  top: 450px;
+  left: 200px;
+}
+.臺東縣 {
+  top: 400px;
+  left: 250px;
+}
+.花蓮縣 {
+  top: 200px;
+  left: 300px;
+}
+.宜蘭縣 {
+  top: 130px;
+  left: 330px;
+}
+.南投縣 {
+  top: 250px;
+  left: 230px;
+}
+.金門縣 {
+  top: 100px;
+  left: 20px;
+}
+.連江縣 {
+  top: 10px;
+  left: 20px;
+}
+.澎湖縣 {
+  top: 250px;
+  left: 10px;
+}

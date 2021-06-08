@@ -1,15 +1,16 @@
 .weather-forecast-container {
   min-height: 40rem;
   width: 50rem;
-  padding: 5rem;
-  line-height: 1.5;
+  padding: 1rem;
+  padding-left: 4rem;
+  /* line-height: 1.5; */
   text-align: left;
 }
-.weather-forecast-container > h2 {
-  margin-bottom: 2rem;
-}
+/* .weather-forecast-container > h2 {
+  margin-bottom: 1rem;
+} */
 .weather-forecast {
-  margin-top: 5rem;
+  margin-top: 1rem;
   background-color: rgb(245, 245, 245);
   min-height: 30rem;
   width: 30rem;

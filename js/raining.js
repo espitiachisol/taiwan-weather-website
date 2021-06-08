@@ -61,15 +61,15 @@ const display = function (data) {
 const getPhoto = function (WxValue) {
   WxValue = Number(WxValue);
   console.log(WxValue);
-  if (sun.includes(WxValue)) return "/img/晴.png";
-  if (sunCloud.includes(WxValue)) return "/img/晴多雲.png";
-  if (cloud.includes(WxValue)) return "/img/多雲.png";
-  if (cloudy.includes(WxValue)) return "/img/陰.png";
-  if (sunRain.includes(WxValue)) return "/img/陰雨.png";
-  if (rain.includes(WxValue)) return "/img/雨.png";
-  if (thunder.includes(WxValue)) return "/img/雷雨.png";
-  if (fog.includes(WxValue)) return "/img/霧.png";
-  if (snow.includes(WxValue)) return "/img/雪.png";
+  if (sun.includes(WxValue)) return "./img/晴.png";
+  if (sunCloud.includes(WxValue)) return "./img/晴多雲.png";
+  if (cloud.includes(WxValue)) return "./img/多雲.png";
+  if (cloudy.includes(WxValue)) return "./img/陰.png";
+  if (sunRain.includes(WxValue)) return "./img/陰雨.png";
+  if (rain.includes(WxValue)) return "./img/雨.png";
+  if (thunder.includes(WxValue)) return "./img/雷雨.png";
+  if (fog.includes(WxValue)) return "./img/霧.png";
+  if (snow.includes(WxValue)) return "./img/雪.png";
 };
 
 const displayOptions = function (data) {
@@ -102,12 +102,19 @@ fetch(
     loc.addEventListener("change", () => {
       userSelectLoc = loc.value;
       display(data);
+      change_pin(loc.value,item_pos)
     });
     time.addEventListener("change", () => {
       userSelectTime = time.value;
       display(data);
     });
   });
+
+
+  function change_pin(item,data){
+    pin.style.top = data[item].y+"px"
+    pin.style.left = data[item].x+"px"
+  }
 
 // let records = null;
 // fetch(
