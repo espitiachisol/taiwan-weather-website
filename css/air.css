@@ -1,0 +1,42 @@
+.airbar{
+    margin-bottom: 14px;
+    width: 300px;
+    display: flex;
+}
+.airbar .bar {
+    border: 1px solid #dcdcdc;
+    width: 78%;
+    /* height: 100%; */
+    margin-left: 14px;
+    background: #fff;
+    position: relative;
+    border-radius: 2px;
+}
+
+
+.weather-air{
+    padding: 16px 15px;
+    background-color:#1a67b1;
+    border-radius: 5px;
+    height: 100%;
+    width: 300px;
+
+}
+.weather-airtitle{
+    margin-bottom: 12px;
+}
+
+.level{
+    width:300px
+}
+.air-datatime{
+    line-height: 2px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+#AQInum{
+    animation: barin1 2s ease-in-out;
+    color: #FFFFFD;
+    text-align: right;
+
+}
