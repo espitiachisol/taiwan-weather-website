@@ -56,7 +56,11 @@ function chanage_bar(RawData, dict) {
   //sitename
   document.getElementById("air-sitename").innerText = site_select.value;
   //AQI number
-  document.getElementById("AQInum").innerText = number;
+  var barnum=Math.floor((number/500)*100)
+  if (number==NaN || number==""||number==0){
+    barnum=0
+  }
+  document.getElementById("AQInum").innerText = barnum+'%';
   //publishtime
   document.getElementById("pubtime").innerText =
     RawData.records[39].PublishTime;
