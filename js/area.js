@@ -4,6 +4,7 @@ let date_time = 0;
 let main_data = null
 let pin = document.getElementById("pin")
 let item_pos = {}
+let loc = document.getElementById("location");
 fetch(
     "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-6DB1B8BA-C3F5-49F7-8443-999865A34532"
 )
@@ -55,13 +56,30 @@ function render_area(data) {
         loc_area.classList.add("loc_area")
         loc_area.classList.add(element.locationName)
         loc_area.dataset.des = element.locationName+" : "+element.weatherElement[0].time[date_time].parameter.parameterName
+        loc_area.dataset.loc = element.locationName
         loc_area.addEventListener("click",function(){
             pin.style.top = this.offsetTop-20+"px"
             pin.style.left = this.offsetLeft+"px"
+            change_area_select(this)
         })
         item_pos[element.locationName]={
             x:loc_area.offsetLeft,
             y:loc_area.offsetTop-20
         }
     });
+}
+
+
+
+function change_area_select(dom){
+
+    let city_for_change = document.getElementsByClassName("loc_name_for_class")
+
+    Array.from(city_for_change).forEach((item)=>{
+        if(item.value===dom.dataset.loc){
+            loc.value = dom.dataset.loc
+            loc.dispatchEvent(new Event("change"))
+        }
+    })
+
 }
