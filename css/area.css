@@ -43,6 +43,7 @@
 }
 .tony #img_block img {
   width: 400px;
+  height: 100%;
 }
 .tony .loc_area {
   font-size: 12px;
@@ -65,6 +66,12 @@
   left: 0;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.103);
 }
+@media (max-width: 500px) {
+  .tony.taiwan_pic {
+    transform: scale(0.9);
+  }
+}
+
 .tony .loc_area i::before {
   z-index: 4;
 }
