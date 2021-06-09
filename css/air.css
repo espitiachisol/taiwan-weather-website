@@ -1,42 +1,62 @@
-.airbar{
-    margin-bottom: 14px;
-    width: 300px;
-    display: flex;
+.airbar {
+  margin: 1.6rem 0;
+  width: 100%;
+  display: flex;
 }
 .airbar .bar {
-    border: 1px solid #dcdcdc;
-    width: 78%;
-    /* height: 100%; */
-    margin-left: 14px;
-    background: #fff;
-    position: relative;
-    border-radius: 2px;
+  border: 1px solid #dcdcdc;
+  width: 100%;
+  margin-left: 14px;
+  background: #fff;
+  position: relative;
+  border-radius: 2px;
+}
+.weather-airtitle #sitename_for_select {
+  width: 8rem;
+  padding: 0.8rem;
+  margin-right: 1.5rem;
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: none;
+}
+.weather-air {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #4c75aa;
+  border-radius: 5px;
+  min-height: 15rem;
+  width: 100%;
+}
+.weather-airtitle {
+  margin-bottom: 12px;
+}
+.weather-airtitle .get-more-info {
+  color: white;
+  text-decoration: none;
+}
+.weather-airtitle .get-more-info p {
+  font-size: 1.6rem;
+  display: inline;
+}
+.weather-air > .air-datatime {
+  color: #fffffd;
+  font-size: 1.2rem;
+  display: block;
+  text-align: right;
 }
 
-
-.weather-air{
-    padding: 16px 15px;
-    background-color:#1a67b1;
-    border-radius: 5px;
-    height: 100%;
-    width: 300px;
-
-}
-.weather-airtitle{
-    margin-bottom: 12px;
+.level {
+  width: 100%;
+  height: 100%;
 }
 
-.level{
-    width:300px
+#AQInum {
+  animation: barin1 2s ease-in-out;
+  color: #fffffd;
+  text-align: right;
 }
-.air-datatime{
-    line-height: 2px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-#AQInum{
-    animation: barin1 2s ease-in-out;
-    color: #FFFFFD;
-    text-align: right;
-
+.fa-smile-o,
+.fa-meh-o,
+.fa-frown-o {
+  font-size: 3rem;
 }

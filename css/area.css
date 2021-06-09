@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  padding-top: 3rem;
+  padding: 2rem;
 }
 .tony #pin {
   position: absolute;
@@ -10,14 +10,14 @@
   left: 0;
   transition: 0.5s;
   font-size: 30px;
-  color: cadetblue;
+  color: #4c75aa;
   animation: tt 1s infinite;
 }
 .fa-cloud-rain,
 .fa-cloud,
 .fa-sun {
-  color: aliceblue;
-  filter: drop-shadow(2px 4px 6px #43677557);
+  color: #585b61;
+  filter: drop-shadow(2px 4px 4px #00000042);
 }
 
 @keyframes tt {
@@ -33,7 +33,7 @@
 }
 .tony #time_period {
   padding: 1rem;
-  background-color: aliceblue;
+  background-color: rgb(245, 245, 245);
   border-radius: 5px;
   border: none;
 }
@@ -48,14 +48,13 @@
   font-size: 12px;
   position: absolute;
   font-weight: 700;
-  color: black;
   font-size: 20px;
   cursor: pointer;
 }
 .tony .loc_area:hover::before {
   content: attr(data-des);
   font-size: 12px;
-  background-color: aliceblue;
+  background-color: hsla(0, 0%, 95%, 0.8);
   word-break: keep-all;
   width: 20rem;
   position: absolute;
@@ -64,6 +63,7 @@
   border-radius: 5px;
   top: 0;
   left: 0;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.103);
 }
 .tony .loc_area i::before {
   z-index: 4;

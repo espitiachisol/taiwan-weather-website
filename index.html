@@ -1,101 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>雨量觀測</title>
-    <!-- 建立整體樣式指導：基礎字型、字體、基底色、標題、段落樣式等等 -->
-    <link rel="stylesheet" type="text/css" href="css/common.css" />
-    <!-- 建立雨量觀測部份的樣式 -->
-    <link rel="stylesheet" type="text/css" href="css/raining.css" />
-    <link rel="stylesheet" type="text/css" href="css/weather.css" />
-    <link rel="stylesheet" type="text/css" href="css/air.css" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <script
-    src="https://kit.fontawesome.com/b3d0241009.js"
-    crossorigin="anonymous"
-  ></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>雨量觀測</title>
+  <!-- 建立整體樣式指導：基礎字型、字體、基底色、標題、段落樣式等等 -->
+  <link rel="stylesheet" type="text/css" href="css/common.css" />
+  <!-- 建立雨量觀測部份的樣式 -->
+  <link rel="stylesheet" type="text/css" href="css/raining.css" />
+  <link rel="stylesheet" type="text/css" href="css/weather.css" />
+  <link rel="stylesheet" type="text/css" href="css/air.css" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/b3d0241009.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/area.css" />
-  </head>
-  <body onload="getData();">
-    <div class="main_page">
-      <div class="weather-forecast-container">
-        <h2>各縣市36小時天氣預報</h2>
+</head>
+
+<body onload="getData();">
+  <header></header>
+  <div class="main_page">
+    <div class="weather-forecast-container">
+      <h2>各縣市36小時天氣預報</h2>
+      <div class="flex-block">
+        <p for="location">城市：</p>
+        <select name="location" id="location"></select>
+      </div>
+      <div class="flex-block">
+        <p for="time">時段：</p>
+        <select name="time" id="time"></select>
+      </div>
+      <div class="weather-forecast">
+        <img class="weather-icon" src="./img/Spinner-1s-200px.svg" />
         <div class="block">
-          <label for="location">城市：</label>
-          <select name="location" id="location"></select>
-        </div>
-        <div class="block">
-          <label for="time">時段：</label>
-          <select name="time" id="time"></select>
-        </div>
-        <div class="weather-forecast">
-          <div class="block">
-            <img class="weather-icon"src="./img/Spinner-1s-200px.svg" />
-            <p class="Wx">&nbsp;</p>
-          </div>
-          <div class="flex">
+          <p class="Wx">&nbsp;</p>
+        
+        <div class="flex">
           <h4>&#x2602</h4>
           <p class="PoP">&nbsp;</p>
         </div>
         <div class="flex">
-          
+
           <p class="MinT">&nbsp;</p>
           <h4> - </h4>
           <p class="MaxT">&nbsp;</p>
         </div>
         <div class="flex">
           <h4>舒適度</h4>
-          <p class="CI">&nbsp;</p></div>
+          <p class="CI">&nbsp;</p>
         </div>
       </div>
-      <div class="taiwan_pic tony">
-        <select name="" id="time_period"></select>
-        <div id="img_block">
-          <img src="./css/Taiwan.png" alt="" />
-          <div id="loc_name_block"></div>
-          <i class="fas fa-thumbtack" id="pin"></i>
-        </div>
       </div>
-      
-    </div>
-
-    <div  class="weather-air"  >
-        <div class="weather-airtitle" style="line-height: 1.3;"> 
-          <select name="" id="sitename_for_select"></select>
-          <a aria-label="看更多" style="color:white;text-decoration:none" target="_blank" rel="noopener noreferrer" href="https://airtw.epa.gov.tw/">空氣品質監測
-            <br>(測站名稱：<span id="air-sitename"></span>) 
-            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-          </a>
+    
+    <!-- 空氣品質檢測 -->
+    <div class="weather-air">
+      <div class="weather-airtitle" style="line-height: 1.3;">
+        <select name="" id="sitename_for_select"></select>
+        <a aria-label="看更多" class="get-more-info" target="_blank" rel="noopener noreferrer"
+          href="https://airtw.epa.gov.tw/">空氣品質監測
+          &nbsp;<p>(測站名稱:<span id="air-sitename"></span>)</p>
+          <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="airbar">
+        <div class="airicon" id="level-1" style="color: #FFFFFD;">
         </div>
-        <div class="airbar" >
-          <div class="airicon" id="level-1" style="color: #FFFFFD;">            
-          </div>
-          <div class="bar">
-            <div class="level">              
-              <div id="AQInum" ></div>
-            </div>
+        <div class="bar">
+          <div class="level">
+            <div id="AQInum"></div>
           </div>
         </div>
-
-        <span class="air-datatime" style="color: #FFFFFD;font-size: 10px;">資料來源：環保署 (<span id="pubtime"></span>)</span>
       </div>
+      <span class="air-datatime">資料來源：環保署 (<span id="pubtime"></span>)</span>
     </div>
-    <!-- 美化雨量觀測顯示、資料處理或建立資料分頁功能 -->
-    <!-- <h3>雨量觀測</h3>
-	<div id="raining"></div> -->
+  </div>
 
-    <!--
-		完成各縣市氣象預報功能
-		請使用中央氣象局公開 API 的第一個資料集 (/v1/rest/datastore/F-C0032-001)
-		https://opendata.cwb.gov.tw/dist/opendata-swagger.html?urls.primaryName=openAPI#/
-	-->
-    <!-- <h3>各縣市最新氣象預報 ( 文字描述、低溫、高溫 )</h3>
-	<div id="weather"></div> -->
+  
+ 
 
-    <script src="js/area.js"></script>
-    <script src="js/raining.js"></script>
-    <script src="js/AQI.js"></script>
-  </body>
+
+
+
+  <div class="taiwan_pic tony">
+    <select name="" id="time_period"></select>
+    <div id="img_block">
+      <img src="./css/Taiwan.png" alt="" />
+      <div id="loc_name_block"></div>
+      <i class="fas fa-thumbtack" id="pin"></i>
+    </div>
+  </div>
+
+  </div> </div>
+<footer><p>資料來源：中央氣象局-氣象資料開放平臺</p></footer>
+  <script src="js/area.js"></script>
+  <script src="js/raining.js"></script>
+  <script src="js/AQI.js"></script>
+</body>
+
 </html>
