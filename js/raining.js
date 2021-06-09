@@ -103,6 +103,7 @@ fetch(
       userSelectLoc = loc.value;
       display(data);
       change_pin(loc.value,item_pos)
+      getData()
     });
     time.addEventListener("change", () => {
       userSelectTime = time.value;
