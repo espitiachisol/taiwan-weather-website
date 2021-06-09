@@ -10,13 +10,15 @@
     <!-- 建立雨量觀測部份的樣式 -->
     <link rel="stylesheet" type="text/css" href="css/raining.css" />
     <link rel="stylesheet" type="text/css" href="css/weather.css" />
+    <link rel="stylesheet" type="text/css" href="css/air.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script
     src="https://kit.fontawesome.com/b3d0241009.js"
     crossorigin="anonymous"
   ></script>
   <link rel="stylesheet" href="css/area.css" />
   </head>
-  <body>
+  <body onload="getData();">
     <div class="main_page">
       <div class="weather-forecast-container">
         <h2>各縣市36小時天氣預報</h2>
@@ -56,7 +58,29 @@
           <i class="fas fa-thumbtack" id="pin"></i>
         </div>
       </div>
+      
     </div>
+
+    <div  class="weather-air"  >
+        <div class="weather-airtitle" style="line-height: 1.3;"> 
+          <select name="" id="sitename_for_select"></select>
+          <a aria-label="看更多" style="color:white;text-decoration:none" target="_blank" rel="noopener noreferrer" href="https://airtw.epa.gov.tw/">空氣品質監測
+            <br>(測站名稱：<span id="air-sitename"></span>) 
+            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="airbar" >
+          <div class="airicon" id="level-1" style="color: #FFFFFD;">            
+          </div>
+          <div class="bar">
+            <div class="level">              
+              <div id="AQInum" ></div>
+            </div>
+          </div>
+        </div>
+
+        <span class="air-datatime" style="color: #FFFFFD;font-size: 10px;">資料來源：環保署 (<span id="pubtime"></span>)</span>
+      </div>
     </div>
     <!-- 美化雨量觀測顯示、資料處理或建立資料分頁功能 -->
     <!-- <h3>雨量觀測</h3>
@@ -72,5 +96,6 @@
 
     <script src="js/area.js"></script>
     <script src="js/raining.js"></script>
+    <script src="js/AQI.js"></script>
   </body>
 </html>
