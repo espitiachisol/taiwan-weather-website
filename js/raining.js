@@ -1,6 +1,6 @@
 const CWB_API_KEY = "CWB-6DB1B8BA-C3F5-49F7-8443-999865A34532";
 // selcet
-let loc = document.getElementById("location");
+// let loc = document.getElementById("location");
 let time = document.getElementById("time");
 //show
 const Wx = document.querySelector(".Wx");
@@ -13,6 +13,7 @@ const weatherIcon = document.querySelector(".weather-icon");
 let data = null;
 let userSelectLoc = null;
 let userSelectTime = 0;
+let main_data_for_change = null;
 //
 const sun = [1];
 const sunCloud = [2, 3];
@@ -77,6 +78,7 @@ const displayOptions = function (data) {
     let loc_name = document.createElement("option");
     loc_name.value = element.locationName;
     loc_name.innerHTML = element.locationName;
+    loc_name.classList.add("loc_name_for_class")
     loc.appendChild(loc_name);
   });
   let time_pos = 0;
@@ -95,22 +97,23 @@ fetch(
   .then((res) => {
     return res.json();
   })
-  .then((data) => {
-    data = data.records.location;
+  .then((datadata) => {
+    data = datadata.records.location;
     displayOptions(data);
     display(data);
-    loc.addEventListener("change", () => {
-      userSelectLoc = loc.value;
-      display(data);
-      change_pin(loc.value,item_pos)
-      getData()
-    });
     time.addEventListener("change", () => {
       userSelectTime = time.value;
       display(data);
     });
   });
-
+  
+  loc.addEventListener("change", () => {
+    console.log(1)
+    userSelectLoc = loc.value;
+    display(data);
+    change_pin(loc.value,item_pos)
+    getData()
+  });
 
   function change_pin(item,data){
     pin.style.top = data[item].y+"px"
