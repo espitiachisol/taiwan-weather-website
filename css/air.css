@@ -52,8 +52,10 @@
 
 #AQInum {
   animation: barin1 2s ease-in-out;
-  color: #fffffd;
+  color: #FFFFFD;
   text-align: right;
+  line-height: 28.67px;
+  font-size: 1.5rem;
 }
 .fa-smile-o,
 .fa-meh-o,
