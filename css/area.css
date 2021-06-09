@@ -1,19 +1,26 @@
 .tony.taiwan_pic {
   display: flex;
-  align-items: flex-start;
-  flex-direction: row-reverse;
+  align-items: flex-end;
+  flex-direction: column;
   padding-top: 3rem;
 }
-.tony #pin{
+.tony #pin {
   position: absolute;
   top: 0;
   left: 0;
-  transition: .5s;
+  transition: 0.5s;
   font-size: 30px;
   color: cadetblue;
   animation: tt 1s infinite;
 }
-@keyframes tt{
+.fa-cloud-rain,
+.fa-cloud,
+.fa-sun {
+  color: aliceblue;
+  filter: drop-shadow(2px 4px 6px #43677557);
+}
+
+@keyframes tt {
   0% {
     transform: translateY(-10px);
   }
@@ -24,8 +31,8 @@
     transform: translateY(-10px);
   }
 }
-.tony #time_period{
-  padding: 10px;
+.tony #time_period {
+  padding: 1rem;
   background-color: aliceblue;
   border-radius: 5px;
   border: none;
@@ -45,12 +52,12 @@
   font-size: 20px;
   cursor: pointer;
 }
-.tony .loc_area:hover::before{
+.tony .loc_area:hover::before {
   content: attr(data-des);
   font-size: 12px;
   background-color: aliceblue;
   word-break: keep-all;
-  width: 200px;
+  width: 20rem;
   position: absolute;
   z-index: 2;
   padding: 5px;
@@ -58,7 +65,7 @@
   top: 0;
   left: 0;
 }
-.tony .loc_area i::before{
+.tony .loc_area i::before {
   z-index: 4;
 }
 .基隆市 {

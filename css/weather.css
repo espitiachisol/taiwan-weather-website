@@ -1,20 +1,40 @@
+.main_page {
+  display: flex;
+  justify-content: center;
+}
 .weather-forecast-container {
   min-height: 40rem;
   width: 50rem;
-  padding: 1rem;
-  padding-left: 4rem;
-  /* line-height: 1.5; */
+  padding: 2rem 4rem;
   text-align: left;
 }
-/* .weather-forecast-container > h2 {
+.weather-forecast-container > h2 {
   margin-bottom: 1rem;
-} */
-.weather-forecast {
+  letter-spacing: 2px;
+}
+.weather-forecast-container #location,
+.weather-forecast-container #time {
+  width: 35rem;
+  padding: 1rem;
   margin-top: 1rem;
-  background-color: rgb(245, 245, 245);
-  min-height: 30rem;
-  width: 30rem;
-  padding: 5rem;
+  background-color: aliceblue;
+  border-radius: 5px;
+  border: none;
+}
+
+.weather-forecast-container > .weather-forecast {
+  margin-top: 2rem;
+  background-color: rgb(255, 247, 241);
+  /* background-color: rgb(255, 254, 243); */
+  /* background-color: rgb(255, 245, 247); */
+  /* background-color: rgb(242, 255, 253); */
+  /* background-color: rgb(251, 255, 241); */
+  background-color: rgb(240, 249, 255);
+  /* background-color: rgb(255, 244, 253); */
+  /* background-color: aliceblue; */
+  min-height: 20rem;
+  width: 100%;
+  padding: 2rem;
   text-align: center;
   border-radius: 10px;
 }
@@ -26,7 +46,7 @@
   display: inline;
 }
 .weather-forecast > .block > img {
-  width: 20rem;
+  width: 15rem;
   display: block;
   margin: 0 auto;
   margin-bottom: 2rem;
