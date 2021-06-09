@@ -55,9 +55,10 @@
 .tony .loc_area:hover::before {
   content: attr(data-des);
   font-size: 12px;
-  background-color: hsla(0, 0%, 95%, 0.8);
+  background-color: hsla(0, 0%, 100%, 0.8);
   word-break: keep-all;
-  width: 20rem;
+  width: 12rem;
+  height: auto;
   position: absolute;
   z-index: 2;
   padding: 5px;
@@ -68,7 +69,8 @@
 }
 @media (max-width: 500px) {
   .tony.taiwan_pic {
-    transform: scale(0.9);
+    transform: scale(0.8);
+    padding: 0;
   }
 }
 
