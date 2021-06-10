@@ -5,6 +5,7 @@ let main_data = null;
 let pin = document.getElementById("pin");
 let item_pos = {};
 let loc = document.getElementById("location");
+let time = document.getElementById("time");
 fetch(
   "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-6DB1B8BA-C3F5-49F7-8443-999865A34532"
 )
@@ -36,6 +37,10 @@ time_period.addEventListener("change", change_time);
 function change_time() {
   date_time = this.value;
   render_area(main_data);
+  if(time_period.value!==time.value){
+    time.value = time_period.value
+    time.dispatchEvent(new Event("change"))
+  }
 }
 
 function render_area(data) {

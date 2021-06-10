@@ -1,7 +1,6 @@
 const CWB_API_KEY = "CWB-6DB1B8BA-C3F5-49F7-8443-999865A34532";
 // selcet
 // let loc = document.getElementById("location");
-let time = document.getElementById("time");
 //show
 const Wx = document.querySelector(".Wx");
 const PoP = document.querySelector(".PoP");
@@ -104,6 +103,10 @@ fetch(
     time.addEventListener("change", () => {
       userSelectTime = time.value;
       display(data);
+      if(time_period.value!==time.value){
+        time_period.value = time.value
+        time_period.dispatchEvent(new Event("change"))
+      }
     });
   });
   
