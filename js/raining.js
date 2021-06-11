@@ -78,7 +78,7 @@ const displayOptions = function (data) {
     let loc_name = document.createElement("option");
     loc_name.value = element.locationName;
     loc_name.innerHTML = element.locationName;
-    loc_name.classList.add("loc_name_for_class")
+    loc_name.classList.add("loc_name_for_class");
     loc.appendChild(loc_name);
   });
   let time_pos = 0;
@@ -106,19 +106,19 @@ fetch(
       display(data);
     });
   });
-  
-  loc.addEventListener("change", () => {
-    console.log(1)
-    userSelectLoc = loc.value;
-    display(data);
-    change_pin(loc.value,item_pos)
-    getData()
-  });
 
-  function change_pin(item,data){
-    pin.style.top = data[item].y+"px"
-    pin.style.left = data[item].x+"px"
-  }
+loc.addEventListener("change", () => {
+  console.log(1);
+  userSelectLoc = loc.value;
+  display(data);
+  change_pin(loc.value, item_pos);
+  getData();
+});
+
+function change_pin(item, data) {
+  pin.style.top = data[item].y + "px";
+  pin.style.left = data[item].x + "px";
+}
 
 // let records = null;
 // fetch(
