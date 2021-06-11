@@ -48,7 +48,7 @@
 } */
 
 .tony #img_block path:hover {
-  filter: brightness(90%);
+  filter: brightness(105%);
 }
 
 .tony #img_block svg {
@@ -78,9 +78,13 @@
   left: 0;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.103);
 }
-.tony .loc_area:hoverㄔㄛ path {
-  filter: brightness(90%);
+/*待調整 
+.loc_area:hover #path2861 {
+  filter: brightness(105%);
 }
+.loc_area:active path {
+  filter: brightness(90%);
+} */
 @media (max-width: 500px) {
   .tony.taiwan_pic {
     transform: scale(0.8);
