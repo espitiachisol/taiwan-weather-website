@@ -1,4 +1,7 @@
+
 # taiwan-weather-website 
+
+<img width="600" alt="Screen Shot 2021-08-11 at 7 05 32 PM" src="https://user-images.githubusercontent.com/61710519/131245368-f0dee3af-76f2-48c0-99d9-0344d403307d.png"></img>
 
 ### 網站連結：https://espitiachisol.github.io/taiwan-weather-website/
 <br>
